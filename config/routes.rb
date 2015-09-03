@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'disk_controller/genitalite'
+
   resources :competitions
 
   # The priority is based upon order of creation: first created -> highest priority.
