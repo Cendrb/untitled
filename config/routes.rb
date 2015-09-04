@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :nouns
+
+  resources :adjectives
+
   get 'disk_controller/genitalite'
+  post 'penis_enlargement' => "disk_controller#genitalite"
 
   resources :competitions
+
+  root 'disk_controller#diskform'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
