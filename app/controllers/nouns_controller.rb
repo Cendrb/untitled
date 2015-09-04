@@ -28,7 +28,7 @@ class NounsController < ApplicationController
 
     respond_to do |format|
       if @noun.save
-        format.html { redirect_to @noun, notice: 'Noun was successfully created.' }
+        format.html { redirect_to nouns_path, notice: 'Noun was successfully created.' }
         format.json { render :show, status: :created, location: @noun }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class NounsController < ApplicationController
   def update
     respond_to do |format|
       if @noun.update(noun_params)
-        format.html { redirect_to @noun, notice: 'Noun was successfully updated.' }
+        format.html { redirect_to nouns_path, notice: 'Noun was successfully updated.' }
         format.json { render :show, status: :ok, location: @noun }
       else
         format.html { render :edit }

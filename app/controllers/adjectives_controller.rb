@@ -28,7 +28,7 @@ class AdjectivesController < ApplicationController
 
     respond_to do |format|
       if @adjective.save
-        format.html { redirect_to @adjective, notice: 'Adjective was successfully created.' }
+        format.html { redirect_to adjectives_path, notice: 'Adjective was successfully created.' }
         format.json { render :show, status: :created, location: @adjective }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AdjectivesController < ApplicationController
   def update
     respond_to do |format|
       if @adjective.update(adjective_params)
-        format.html { redirect_to @adjective, notice: 'Adjective was successfully updated.' }
+        format.html { redirect_to adjectives_path, notice: 'Adjective was successfully updated.' }
         format.json { render :show, status: :ok, location: @adjective }
       else
         format.html { render :edit }
