@@ -21,6 +21,18 @@ class ChunkerEndingsController < ApplicationController
   def edit
   end
 
+  def multi_new
+
+  end
+
+  def multi_create
+    @data = params[:string].tr!("\"", '').split(",")
+    @data.each do |zidan|
+      ChunkerEnding.create(name: zidan)
+    end
+    redirect_to chunker_endings_path
+  end
+
   # POST /chunker_endings
   # POST /chunker_endings.json
   def create

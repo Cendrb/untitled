@@ -21,6 +21,18 @@ class ChunkerSubjectsController < ApplicationController
   def edit
   end
 
+  def multi_new
+
+  end
+
+  def multi_create
+    @data = params[:string].tr!("\"", '').split(",")
+    @data.each do |zidan|
+      ChunkerSubject.create(name: zidan)
+    end
+    redirect_to chunker_subjects_path
+  end
+
   # POST /chunker_subjects
   # POST /chunker_subjects.json
   def create

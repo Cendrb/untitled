@@ -21,6 +21,18 @@ class ChunkerVerbsController < ApplicationController
   def edit
   end
 
+  def multi_new
+
+  end
+
+  def multi_create
+    @data = params[:string].tr!("\"", '').split(",")
+    @data.each do |zidan|
+      ChunkerVerb.create(name: zidan)
+    end
+    redirect_to chunker_verbs_path
+  end
+
   # POST /chunker_verbs
   # POST /chunker_verbs.json
   def create

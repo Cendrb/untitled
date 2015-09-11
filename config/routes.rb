@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   get 'chunker' => 'chunker#penis_form'
   post 'chunker_submit' => 'chunker#penis'
 
+  get 'chunker_endings/multi' => "chunker_endings#multi_new"
+  post 'chunker_endings/multi' => "chunker_endings#multi_create"
+
+  get 'chunker_subjects/multi' => "chunker_subjects#multi_new"
+  post 'chunker_subjects/multi' => "chunker_subjects#multi_create"
+
+  get 'chunker_verbs/multi' => "chunker_verbs#multi_new"
+  post 'chunker_verbs/multi' => "chunker_verbs#multi_create"
+
   resources :chunker_endings
 
   resources :chunker_verbs
