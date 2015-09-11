@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chunker Endings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chunker_endings.each do |chunker_ending| %>
+      <tr>
+        <td><%= chunker_ending.name %></td>
+        <td><%= link_to 'Show', chunker_ending %></td>
+        <td><%= link_to 'Edit', edit_chunker_ending_path(chunker_ending) %></td>
+        <td><%= link_to 'Destroy', chunker_ending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chunker ending', new_chunker_ending_path %>

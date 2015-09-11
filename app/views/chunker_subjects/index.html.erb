@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chunker Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chunker_subjects.each do |chunker_subject| %>
+      <tr>
+        <td><%= chunker_subject.name %></td>
+        <td><%= link_to 'Show', chunker_subject %></td>
+        <td><%= link_to 'Edit', edit_chunker_subject_path(chunker_subject) %></td>
+        <td><%= link_to 'Destroy', chunker_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chunker subject', new_chunker_subject_path %>

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'chunker' => 'chunker#penis_form'
+  post 'chunker_submit' => 'chunker#penis'
+
+  resources :chunker_endings
+
+  resources :chunker_verbs
+
+  resources :chunker_subjects
+
   resources :nouns
 
   resources :adjectives
