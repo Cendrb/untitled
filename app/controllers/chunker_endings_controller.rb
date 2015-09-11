@@ -4,7 +4,7 @@ class ChunkerEndingsController < ApplicationController
   # GET /chunker_endings
   # GET /chunker_endings.json
   def index
-    @chunker_endings = ChunkerEnding.all
+    @chunker_endings = ChunkerEnding.all.order(:name)
   end
 
   # GET /chunker_endings/1

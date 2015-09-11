@@ -4,7 +4,7 @@ class ChunkerSubjectsController < ApplicationController
   # GET /chunker_subjects
   # GET /chunker_subjects.json
   def index
-    @chunker_subjects = ChunkerSubject.all
+    @chunker_subjects = ChunkerSubject.all.order(:name)
   end
 
   # GET /chunker_subjects/1

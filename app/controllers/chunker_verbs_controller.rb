@@ -4,7 +4,7 @@ class ChunkerVerbsController < ApplicationController
   # GET /chunker_verbs
   # GET /chunker_verbs.json
   def index
-    @chunker_verbs = ChunkerVerb.all
+    @chunker_verbs = ChunkerVerb.all.order(:name)
   end
 
   # GET /chunker_verbs/1
