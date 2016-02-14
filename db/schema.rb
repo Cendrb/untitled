@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911210843) do
+ActiveRecord::Schema.define(version: 20160214144019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,32 @@ ActiveRecord::Schema.define(version: 20150911210843) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dota_heroes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "main_attribute"
+    t.integer  "str_base"
+    t.float    "str_gain"
+    t.integer  "agi_base"
+    t.float    "agi_gain"
+    t.integer  "int_base"
+    t.float    "int_gain"
+    t.integer  "movement_speed"
+    t.float    "armor"
+    t.integer  "dmg_min"
+    t.integer  "dmg_max"
+    t.integer  "attack_range"
+    t.float    "base_attack_time"
+    t.float    "attack_point"
+    t.float    "attack_backswing"
+    t.integer  "vision_day"
+    t.integer  "vision_night"
+    t.float    "turn_rate"
+    t.integer  "collision_size"
+    t.float    "health_regen"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "nouns", force: :cascade do |t|

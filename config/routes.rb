@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :dota_heroes
   get 'summary/welcome'
 
   get 'summary/administration'
+
+  get 'reload_dota_heroes' => 'dota_heroes#load_from_gamepedia'
 
   get 'chunker' => 'chunker#penis_form'
   post 'chunker_submit' => 'chunker#penis'

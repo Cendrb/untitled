@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dota Heroes</h1>
+
+<table id="dota_heroes_index" class="tablesorter tablesorter-default">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ATT</th>
+      <th>STR</th>
+      <th>STR+</th>
+      <th>AGI</th>
+      <th>AGI+</th>
+      <th>INT</th>
+      <th>INT+</th>
+      <th>MS</th>
+      <th>ARM</th>
+      <th>DMG MIN</th>
+      <th>DMG MAX</th>
+      <th>A-RANGE</th>
+      <th>A-TIME</th>
+      <th>A-POINT</th>
+      <th>A-BACK</th>
+      <th>VIS-D</th>
+      <th>VIS-N</th>
+      <th>T-RATE</th>
+      <th>COLL</th>
+      <th>HP/S</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dota_heroes.each do |dota_hero| %>
+      <tr>
+        <td><%= dota_hero.name %></td>
+        <td><%= dota_hero.main_attribute %></td>
+        <td><%= dota_hero.str_base %></td>
+        <td><%= dota_hero.str_gain %></td>
+        <td><%= dota_hero.agi_base %></td>
+        <td><%= dota_hero.agi_gain %></td>
+        <td><%= dota_hero.int_base %></td>
+        <td><%= dota_hero.int_gain %></td>
+        <td><%= dota_hero.movement_speed %></td>
+        <td><%= dota_hero.armor %></td>
+        <td><%= dota_hero.dmg_min %></td>
+        <td><%= dota_hero.dmg_max %></td>
+        <td><%= dota_hero.attack_range %></td>
+        <td><%= dota_hero.base_attack_time %></td>
+        <td><%= dota_hero.attack_point %></td>
+        <td><%= dota_hero.attack_backswing %></td>
+        <td><%= dota_hero.vision_day %></td>
+        <td><%= dota_hero.vision_night %></td>
+        <td><%= dota_hero.turn_rate %></td>
+        <td><%= dota_hero.collision_size %></td>
+        <td><%= dota_hero.health_regen %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'RELOAD', reload_dota_heroes_path %>
+<%= link_to 'New Dota hero', new_dota_hero_path %>

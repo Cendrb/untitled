@@ -19,6 +19,8 @@
 //= require nprogress
 //= require nprogress-turbolinks
 
+//= require jquery-tablesorter
+
 //= require bootstrap
 //= require_tree .
 

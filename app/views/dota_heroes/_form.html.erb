@@ -1,0 +1,101 @@
+<%= form_for(@dota_hero) do |f| %>
+  <% if @dota_hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dota_hero.errors.count, "error") %> prohibited this dota_hero from being saved:</h2>
+
+      <ul>
+      <% @dota_hero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :main_attribute %><br>
+    <%= f.text_field :main_attribute %>
+  </div>
+  <div class="field">
+    <%= f.label :str_base %><br>
+    <%= f.number_field :str_base %>
+  </div>
+  <div class="field">
+    <%= f.label :str_gain %><br>
+    <%= f.text_field :str_gain %>
+  </div>
+  <div class="field">
+    <%= f.label :agi_base %><br>
+    <%= f.number_field :agi_base %>
+  </div>
+  <div class="field">
+    <%= f.label :agi_gain %><br>
+    <%= f.text_field :agi_gain %>
+  </div>
+  <div class="field">
+    <%= f.label :int_base %><br>
+    <%= f.number_field :int_base %>
+  </div>
+  <div class="field">
+    <%= f.label :int_gain %><br>
+    <%= f.text_field :int_gain %>
+  </div>
+  <div class="field">
+    <%= f.label :movement_speed %><br>
+    <%= f.number_field :movement_speed %>
+  </div>
+  <div class="field">
+    <%= f.label :armor %><br>
+    <%= f.text_field :armor %>
+  </div>
+  <div class="field">
+    <%= f.label :dmg_min %><br>
+    <%= f.number_field :dmg_min %>
+  </div>
+  <div class="field">
+    <%= f.label :dmg_max %><br>
+    <%= f.number_field :dmg_max %>
+  </div>
+  <div class="field">
+    <%= f.label :attack_range %><br>
+    <%= f.number_field :attack_range %>
+  </div>
+  <div class="field">
+    <%= f.label :base_attack_time %><br>
+    <%= f.text_field :base_attack_time %>
+  </div>
+  <div class="field">
+    <%= f.label :attack_point %><br>
+    <%= f.text_field :attack_point %>
+  </div>
+  <div class="field">
+    <%= f.label :attack_backswing %><br>
+    <%= f.text_field :attack_backswing %>
+  </div>
+  <div class="field">
+    <%= f.label :vision_day %><br>
+    <%= f.number_field :vision_day %>
+  </div>
+  <div class="field">
+    <%= f.label :vision_night %><br>
+    <%= f.number_field :vision_night %>
+  </div>
+  <div class="field">
+    <%= f.label :turn_rate %><br>
+    <%= f.text_field :turn_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :collision_size %><br>
+    <%= f.number_field :collision_size %>
+  </div>
+  <div class="field">
+    <%= f.label :health_regen %><br>
+    <%= f.text_field :health_regen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

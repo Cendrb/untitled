@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  main_attribute: MyString
+  str_base: 1
+  str_gain: 1.5
+  agi_base: 1
+  agi_gain: 1.5
+  int_base: 1
+  int_gain: 1.5
+  movement_speed: 1
+  armor: 1.5
+  dmg_min: 1
+  dmg_max: 1
+  attack_range: 1
+  base_attack_time: 1.5
+  attack_point: 1.5
+  attack_backswing: 1.5
+  vision_day: 1
+  vision_night: 1
+  turn_rate: 1.5
+  collision_size: 1
+  health_regen: 1.5
+
+two:
+  name: MyString
+  main_attribute: MyString
+  str_base: 1
+  str_gain: 1.5
+  agi_base: 1
+  agi_gain: 1.5
+  int_base: 1
+  int_gain: 1.5
+  movement_speed: 1
+  armor: 1.5
+  dmg_min: 1
+  dmg_max: 1
+  attack_range: 1
+  base_attack_time: 1.5
+  attack_point: 1.5
+  attack_backswing: 1.5
+  vision_day: 1
+  vision_night: 1
+  turn_rate: 1.5
+  collision_size: 1
+  health_regen: 1.5
