@@ -1,2 +1,0 @@
-module ChunkerEndingsHelper
-end

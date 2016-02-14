@@ -11,6 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+
 //= require turbolinks
+
+//= require nprogress
+//= require nprogress-turbolinks
+
+//= require bootstrap
 //= require_tree .
+
+NProgress.configure({
+    showSpinner: false,
+    trickleRate: 0.06,
+    trickleSpeed: 700,
+    easing: "ease"
+});

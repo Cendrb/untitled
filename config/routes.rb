@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'summary/welcome'
+
+  get 'summary/administration'
+
   get 'chunker' => 'chunker#penis_form'
   post 'chunker_submit' => 'chunker#penis'
 
@@ -21,12 +25,13 @@ Rails.application.routes.draw do
 
   resources :adjectives
 
+  get 'disk_controller/diskform'
   get 'disk_controller/genitalite'
   post 'penis_enlargement' => "disk_controller#genitalite"
 
   resources :competitions
 
-  root 'disk_controller#diskform'
+  root 'summary#welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

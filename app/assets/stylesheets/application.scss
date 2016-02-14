@@ -10,6 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require material_icons
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "_variables";
+@import "material_design";
+@import "nprogress_config";
