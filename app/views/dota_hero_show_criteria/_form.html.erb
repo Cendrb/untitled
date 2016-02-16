@@ -1,0 +1,37 @@
+<%= form_for(@dota_hero_show_criterium) do |f| %>
+  <% if @dota_hero_show_criterium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dota_hero_show_criterium.errors.count, "error") %> prohibited this dota_hero_show_criterium from being saved:</h2>
+
+      <ul>
+      <% @dota_hero_show_criterium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :show_always %><br>
+    <%= f.check_box :show_always %>
+  </div>
+  <div class="field">
+    <%= f.label :upper_limit %><br>
+    <%= f.number_field :upper_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :lower_limit %><br>
+    <%= f.number_field :lower_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :dota_hero_show_criterium_mode_id %><br>
+    <%= f.number_field :dota_hero_show_criterium_mode_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

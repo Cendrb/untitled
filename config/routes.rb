@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dota_hero_show_criterium_modes
+  resources :dota_hero_show_criteria
   resources :dota_heroes
   get 'summary/welcome'
 

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<% @dota_hero |= nil %>
+
+<h1><%= @dota_hero_show_criterium_mode.name %></h1>
+
+<%= select_tag(:dota_hero_id, options_from_collection_for_select(DotaHero.all, :id, :name, @dota_hero), prompt: 'Vyberte hrdinu pro zobrazení', class: 'form-control mode_show_hero_selector') %>
+
+<div id="current_hero_stats" data-id="<%= @dota_hero_show_criterium_mode.id %>">
+  <%= render partial: 'dota_hero_show_criterium_modes/show/show', locals: {mode: @dota_hero_show_criterium_mode, hero: @dota_hero} %>
+</div>
+
+
+<%= link_to 'Edit', edit_dota_hero_show_criterium_mode_path(@dota_hero_show_criterium_mode) %> |
+<%= link_to 'Back', dota_hero_show_criterium_modes_path %>

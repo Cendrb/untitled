@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  show_always: false
+  upper_limit: 1
+  lower_limit: 1
+  dota_hero_show_criterium_mode_id: 1
+
+two:
+  name: MyString
+  show_always: false
+  upper_limit: 1
+  lower_limit: 1
+  dota_hero_show_criterium_mode_id: 1

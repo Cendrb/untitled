@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214144019) do
+ActiveRecord::Schema.define(version: 20160216171159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,23 @@ ActiveRecord::Schema.define(version: 20160214144019) do
   end
 
   create_table "competitions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dota_hero_show_criteria", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "show_always"
+    t.integer  "upper_limit"
+    t.integer  "lower_limit"
+    t.integer  "dota_hero_show_criterium_mode_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "sorting_order"
+  end
+
+  create_table "dota_hero_show_criterium_modes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

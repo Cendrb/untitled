@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dota Hero Show Criterium Modes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dota_hero_show_criterium_modes.each do |dota_hero_show_criterium_mode| %>
+      <tr>
+        <td><%= dota_hero_show_criterium_mode.name %></td>
+        <td><%= link_to 'Show', dota_hero_show_criterium_mode %></td>
+        <td><%= link_to 'Edit', edit_dota_hero_show_criterium_mode_path(dota_hero_show_criterium_mode) %></td>
+        <td><%= link_to 'Destroy', dota_hero_show_criterium_mode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dota hero show criterium mode', new_dota_hero_show_criterium_mode_path %>

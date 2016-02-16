@@ -1,0 +1,37 @@
+<% if hero %>
+    <h3><%= hero.name %></h3>
+    <% mode.dota_hero_show_criteria.order(:sorting_order).each do |criterium| %>
+        <div class="current_hero_criterium_section">
+          <% case criterium.name %>
+          <% when 'main_attribute' %>
+              <%= dota_attribute_icon_tag(hero.main_attribute, 48) %>
+          <% when 'attributes_table' %>
+              <div class="attribute_section"><%= dota_attribute_icon_tag('strength', 22) %>
+                <%# ActiveRecord::Base.connection.execute("SQL query") %>
+                <span class="attribute_base_value"><%= hero.str_base %></span> (<%= criterium.get_comparison_with_other_heroes('str_base', hero) %>)
+                <span class="attribute_gain_value"> +<%= hero.str_gain %></span> (<%= criterium.get_comparison_with_other_heroes('str_gain', hero) %>)
+              </div>
+              <div class="attribute_section"><%= dota_attribute_icon_tag('agility', 22) %>
+                <span class="attribute_base_value"><%= hero.agi_base %></span> (<%= criterium.get_comparison_with_other_heroes('agi_base', hero) %>)
+                <span class="attribute_gain_value"> +<%= hero.agi_gain %></span> (<%= criterium.get_comparison_with_other_heroes('agi_gain', hero) %>)
+              </div>
+              <div class="attribute_section"><%= dota_attribute_icon_tag('intelligence', 22) %>
+                <span class="attribute_base_value"><%= hero.int_base %></span> (<%= criterium.get_comparison_with_other_heroes('int_base', hero) %>)
+                <span class="attribute_gain_value"> +<%= hero.int_gain %></span> (<%= criterium.get_comparison_with_other_heroes('int_gain', hero) %>)
+              </div>
+          <% when 'main_attribute' %>
+              <%= hero.main_attribute %>
+          <% when 'main_attribute' %>
+              <%= hero.main_attribute %>
+          <% when 'main_attribute' %>
+              <%= hero.main_attribute %>
+          <% when 'main_attribute' %>
+              <%= hero.main_attribute %>
+          <% else %>
+              We don't know how to render this attribute
+          <% end %>
+        </div>
+    <% end %>
+<% else %>
+    Chooose your hero
+<% end %>

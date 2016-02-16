@@ -1,0 +1,21 @@
+<h1>Editing Dota Hero Show Criterium Mode</h1>
+
+<%= render 'form' %>
+
+<% newly_created = false %>
+<% DotaHeroShowCriteriumMode.criteria_names.each do |name| %>
+    <% criterium = DotaHeroShowCriterium.for_mode(@dota_hero_show_criterium_mode, name) %>
+    <% if !criterium.exists? %>
+        <% criterium = DotaHeroShowCriterium.new(dota_hero_show_criterium_mode_id: @dota_hero_show_criterium_mode.id, name: name, upper_limit: 0, lower_limit: 0) %>
+        <% newly_created = true %>
+    <% else %>
+        <% criterium = criterium.first %>
+        <% newly_created = false %>
+    <% end %>
+    <div class="criterium_section col-xs-4" data-name="<%= criterium.name %>">
+      <%= render partial: 'dota_hero_show_criteria/criteria_modes/form', locals: { criterium: criterium, newly_created: newly_created } %>
+    </div>
+<% end %>
+
+<%= link_to 'Show', @dota_hero_show_criterium_mode %> |
+<%= link_to 'Back', dota_hero_show_criterium_modes_path %>

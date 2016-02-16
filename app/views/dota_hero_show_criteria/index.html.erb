@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dota Hero Show Criteria</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Show always</th>
+      <th>Upper limit</th>
+      <th>Lower limit</th>
+      <th>Dota hero show criterium mode</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dota_hero_show_criteria.each do |dota_hero_show_criterium| %>
+      <tr>
+        <td><%= dota_hero_show_criterium.name %></td>
+        <td><%= dota_hero_show_criterium.show_always %></td>
+        <td><%= dota_hero_show_criterium.upper_limit %></td>
+        <td><%= dota_hero_show_criterium.lower_limit %></td>
+        <td><%= dota_hero_show_criterium.dota_hero_show_criterium_mode_id %></td>
+        <td><%= link_to 'Show', dota_hero_show_criterium %></td>
+        <td><%= link_to 'Edit', edit_dota_hero_show_criterium_path(dota_hero_show_criterium) %></td>
+        <td><%= link_to 'Destroy', dota_hero_show_criterium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dota hero show criterium', new_dota_hero_show_criterium_path %>

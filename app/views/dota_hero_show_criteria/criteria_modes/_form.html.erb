@@ -1,0 +1,27 @@
+<h3><%= criterium.name %></h3>
+<% if newly_created %>
+    <p>Zatím neexistuje</p>
+<% end %>
+<%= form_for criterium, remote: true do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :dota_hero_show_criterium_mode_id %>
+    <div class="field">
+      <%= f.label :show_always %><br>
+      <%= f.check_box :show_always, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label :upper_limit %><br>
+      <%= f.number_field :upper_limit, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label :lower_limit %><br>
+      <%= f.number_field :lower_limit, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label :sorting_order %><br>
+      <%= f.number_field :sorting_order, class: 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'ULOŽID', class: 'form-control' %>
+    </div>
+<% end %>

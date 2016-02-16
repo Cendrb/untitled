@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dota_hero_show_criterium.name %>
+</p>
+
+<p>
+  <strong>Show always:</strong>
+  <%= @dota_hero_show_criterium.show_always %>
+</p>
+
+<p>
+  <strong>Upper limit:</strong>
+  <%= @dota_hero_show_criterium.upper_limit %>
+</p>
+
+<p>
+  <strong>Lower limit:</strong>
+  <%= @dota_hero_show_criterium.lower_limit %>
+</p>
+
+<p>
+  <strong>Dota hero show criterium mode:</strong>
+  <%= @dota_hero_show_criterium.dota_hero_show_criterium_mode_id %>
+</p>
+
+<%= link_to 'Edit', edit_dota_hero_show_criterium_path(@dota_hero_show_criterium) %> |
+<%= link_to 'Back', dota_hero_show_criteria_path %>
