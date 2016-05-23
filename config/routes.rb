@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'session/new'
+
+  get 'session/create'
+
+  get 'session/destroy'
+
+  resources :users
   resources :dota_hero_show_criterium_modes
   resources :dota_hero_show_criteria
   resources :dota_heroes
@@ -35,6 +42,15 @@ Rails.application.routes.draw do
   post 'penis_enlargement' => "disk_controller#genitalite"
 
   resources :competitions
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    get 'logout' => :destroy
+  end
+  get 'register' => 'users#new', as: 'register'
+
+  mount ActionCable.server => '/cable'
 
   root 'summary#welcome'
 

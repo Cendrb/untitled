@@ -1,0 +1,7 @@
+production: &production
+  url: postgresql://localhost:5432
+  adapter: postgresql
+development: &development
+  url: postgresql://localhost:5432
+  adapter: postgresql
+test: *development

@@ -1,2 +1,10 @@
 <h1>John Cena</h1>
-<p>Find me in app/views/summary/welcome.html.erb</p>
+<% if current_user %>
+    Logged in as <%= current_user.nickname %><br>
+    <%= link_to 'Logout', logout_path %>
+<% else %>
+    John Cena is everywhere!<br>
+    <%= link_to 'Login', login_path %>
+<% end %>
+<br>
+<%= text_field_tag 'message_text' %>
