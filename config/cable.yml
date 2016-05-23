@@ -1,5 +1,5 @@
 production: &production
-  url: postgresql://localhost:5432
+  url: <%= ENV['PRODUCTION_DATABASE_URL'] %>
   adapter: postgresql
 development: &development
   url: postgresql://localhost:5432
