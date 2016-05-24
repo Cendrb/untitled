@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_filter :authenticate_registered
   before_action :set_room, only: [:show, :edit, :update, :destroy, :authenticate_for_room, :authenticate_for_room_form]
 
   # GET /rooms
@@ -43,7 +44,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to rooms_path, notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
@@ -57,7 +58,7 @@ class RoomsController < ApplicationController
   def update
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to rooms_path, notice: 'Room was successfully updated.' }
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }

@@ -14,6 +14,10 @@ class UserAuthenticatedForRoom < ApplicationRecord
   end
 
   def self.can_be_accessed_by(room, user)
-    return User.where(id: user.id).joins(user_authenticated_for_rooms: :room).where('rooms.id = ?', room.id).count > 0
+    if room.password_protected?
+      return User.where(id: user.id).joins(user_authenticated_for_rooms: :room).where('rooms.id = ?', room.id).count > 0
+    else
+      return true
+    end
   end
 end

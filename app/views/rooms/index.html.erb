@@ -2,25 +2,34 @@
 
 <h1>Rooms</h1>
 
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Password</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @rooms.each do |room| %>
+  <% @rooms.each do |room| %>
       <tr>
         <td><%= room.name %></td>
-        <td><%= room.password %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="float_right_actions">
+            <% if room.password_protected? %>
+                <% if UserAuthenticatedForRoom.can_be_accessed_by(room, current_user) %>
+                    <%= mi.lock_open.md_36.html({title: 'Protected by password, unlocked'}) %>
+                <% else %>
+                    <%= mi.lock.md_36.html({title: 'Protected by password, locked'}) %>
+                <% end %>
+            <% else %>
+                <%= mi.public.md_36.html({title: 'Accessible by everyone'}) %>
+            <% end %>
+            <%= link_to mi.play_arrow.md_36, room %>
+          </div>
+        </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

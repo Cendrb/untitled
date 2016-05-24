@@ -1,6 +1,7 @@
 <h1>Editing Room</h1>
 
 <%= render 'form', room: @room %>
+<p>WARNING: continuing will remove all users permissions to this room (="saved passwords for rooms")</p>
 
 <%= link_to 'Show', @room %> |
 <%= link_to 'Back', rooms_path %>
