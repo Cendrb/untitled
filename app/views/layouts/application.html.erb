@@ -32,6 +32,16 @@
   </div>
   <div id="material_body">
     <div id="material_body_content">
+      <% if notice %>
+          <p id="notice">
+            <%= notice.html_safe %>
+          </p>
+      <% end %>
+      <% if alert %>
+          <p id="alert">
+            <%= alert.html_safe %>
+          </p>
+      <% end %>
       <%= yield %>
     </div>
   </div>

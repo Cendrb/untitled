@@ -1,0 +1,7 @@
+<h2>Access to room <%= @room.name %></h2>
+<p>This room is password protected. Type in a password to continue.</p>
+<%= form_tag do %>
+    <%= label_tag :password, 'Password' %>
+    <%= password_field_tag :password, class: 'form-control' %>
+    <%= submit_tag 'Send', class: 'form-control' %>
+<% end %>

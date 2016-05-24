@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validate :password_must_be_present
 
+  has_many :user_authenticated_for_rooms, dependent: :destroy
+  has_many :messages
+
   attr_accessor :password_confirmation
   attr_reader :password
 

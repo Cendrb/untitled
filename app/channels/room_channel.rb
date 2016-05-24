@@ -8,6 +8,14 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    ActionCable.server.broadcast "room_channel", message: data['message']
+    puts data
+    room = Room.find(data['room_id'])
+    message = room.messages.create(content: data['message'], user: current_user_cable)
+    ActionCable.server.broadcast "room_channel", dom_element: render_message_partial(message)
+  end
+
+  private
+  def render_message_partial(message)
+    ApplicationController.render(partial: 'messages/message', locals: { message: message })
   end
 end

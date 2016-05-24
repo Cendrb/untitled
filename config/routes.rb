@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  post 'rooms/:id/authenticate_for_room' => 'rooms#authenticate_for_room'
+  get 'rooms/:id/authenticate_for_room' => 'rooms#authenticate_for_room_form', as: 'authenticate_for_room_form'
+  resources :rooms
+
   get 'session/new'
 
   get 'session/create'

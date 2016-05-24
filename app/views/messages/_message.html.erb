@@ -1,0 +1,12 @@
+<div class="message">
+  <h3>
+    <% if message.user %>
+        <%= message.user.nickname %>
+    <% else %>
+        user died
+    <% end %>
+  </h3>
+  <p>
+    <%= message.content %>
+  </p>
+</div>

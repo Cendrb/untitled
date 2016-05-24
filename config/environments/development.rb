@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_cable.url = 'ws://localhost:3000/cable'
+  config.action_cable.allowed_request_origins = ["https://localhost:3000", "http://localhost:3000"]
 end

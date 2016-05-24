@@ -11,9 +11,6 @@ gem 'pg'
 # webserver
 gem 'puma'
 
-# redis
-gem 'redis'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -73,6 +70,8 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'rails-erd'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

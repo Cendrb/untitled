@@ -1,0 +1,9 @@
+<h2><%= @room.name %></h2>
+<div id="message_list" data-room_id="<%= @room.id %>">
+  <% @room.messages.each do |message| %>
+      <%= render partial: 'messages/message', locals: {message: message} %>
+  <% end %>
+</div>
+<%= text_field_tag 'message_text', '', class: 'form-control' %>
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
