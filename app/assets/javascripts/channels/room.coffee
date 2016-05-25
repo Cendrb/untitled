@@ -1,4 +1,5 @@
 $ ->
+  current_users = $('#current_users')
   message_list = $('#message_list')
   send_box = $("#message_text")
   $(document).on 'keypress', (event) ->
@@ -16,7 +17,10 @@ $ ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-      message_list.append(data['dom_element'])
+      switch data['mode']
+        when 'message_received' then message_list.append(data['dom_element'])
+        when 'users_changed' then current_users.replaceWith(data['dom_element'])
+        else alert 'unknown action received: ' + data['mode']
 
 
     speak: (message) ->
